@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mpaincha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mpaincha <mpaincha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 13:29:31 by mpaincha          #+#    #+#             */
-/*   Updated: 2015/11/25 18:29:44 by mpaincha         ###   ########.fr       */
+/*   Updated: 2015/11/26 11:53:04 by mpaincha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <string.h>
 
 void	ft_putchar(char c);
 void	ft_putnbr(int n);

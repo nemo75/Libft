@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mpaincha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mpaincha <mpaincha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 13:40:38 by mpaincha          #+#    #+#             */
-/*   Updated: 2015/11/25 17:35:38 by mpaincha         ###   ########.fr       */
+/*   Updated: 2015/11/26 11:55:52 by mpaincha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strchr(const char *s, int c)
 
 	i = 0;
 	ptr = 0;
+	if (c == '\0')
+		return ((char *)&s[ft_strlen(s)]);
 	while (s[i] != '\0')
 	{
 		if (s[i] == c)
@@ -28,5 +30,5 @@ char	*ft_strchr(const char *s, int c)
 		}
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
