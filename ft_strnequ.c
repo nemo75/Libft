@@ -1,34 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpaincha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 17:48:10 by mpaincha          #+#    #+#             */
-/*   Updated: 2015/11/25 11:13:11 by mpaincha         ###   ########.fr       */
+/*   Created: 2015/11/27 10:39:04 by mpaincha          #+#    #+#             */
+/*   Updated: 2015/11/27 10:39:37 by mpaincha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	size_t	lg_dst;
-	size_t	lg_src;
-	size_t	i;
-
-	i = 0;
-	lg_dst = ft_strlen(dst);
-	lg_src = ft_strlen(src);
-	if (size <= lg_dst)
-	{
-		while (src[i] && i < size)
-		{
-			dst[(size - 1) + i] = src[i];
-			i++;
-		}
-		return (size + lg_src);
-	}
-	return (lg_dst);
+	return (strncmp(s1, s2, n) == 0) ? 1 : 0;
 }

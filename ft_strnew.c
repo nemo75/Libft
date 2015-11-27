@@ -1,34 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpaincha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 17:48:10 by mpaincha          #+#    #+#             */
-/*   Updated: 2015/11/25 11:13:11 by mpaincha         ###   ########.fr       */
+/*   Created: 2015/11/27 11:06:30 by mpaincha          #+#    #+#             */
+/*   Updated: 2015/11/27 11:06:31 by mpaincha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+char	*ft_strnew(size_t size)
 {
-	size_t	lg_dst;
-	size_t	lg_src;
-	size_t	i;
-
-	i = 0;
-	lg_dst = ft_strlen(dst);
-	lg_src = ft_strlen(src);
-	if (size <= lg_dst)
-	{
-		while (src[i] && i < size)
-		{
-			dst[(size - 1) + i] = src[i];
-			i++;
-		}
-		return (size + lg_src);
-	}
-	return (lg_dst);
+	if (size == 0)
+		return ("\0");
+	return ((char *)ft_memalloc(size));
 }
