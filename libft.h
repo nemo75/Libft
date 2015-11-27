@@ -30,6 +30,8 @@ char	*ft_strncat(char *s1, const char *s2, size_t n);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 int		ft_strequ(char const *s1, char const *s2);
 int		ft_strnequ(char const *s1, char const *s2, size_t n);
+char	**ft_strsplit(char const *s, char c);
+char	*ft_strjoin(char const *s1, char const *s2);
 void	ft_strclr(char *s);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putnbr_fd(int n, int fd);

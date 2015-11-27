@@ -1,57 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpaincha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/27 11:38:51 by mpaincha          #+#    #+#             */
-/*   Updated: 2015/11/27 11:38:52 by mpaincha         ###   ########.fr       */
+/*   Created: 2015/11/27 16:44:37 by mpaincha          #+#    #+#             */
+/*   Updated: 2015/11/27 16:45:11 by mpaincha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strlen_int(int n)
+int		ft_count_words(char const *s, char c)
 {
 	int		i;
+	int		count;
 
 	i = 0;
-	if (n == 0)
-		return (1);
-	if (n < 0)
-		i++;
-	while (n != 0)
+	count = 0;
+	while (s[i])
 	{
-		n = n / 10;
+		if (s[i] == c && s[i - 1] != c && s[i + 1] && s[i + 1] != c)
+			count++;
 		i++;
 	}
-	return (i);
+	return (count)
 }
 
-char	*ft_itoa(int n)
+
+/*char	**ft_strsplit(char const *s, char c)
 {
-	char			*str;
-	int				i;
-	unsigned int	nb;
-	int				len;
+	char	**str;
 
-	len = ft_strlen_int(n);
-	i = 0;
-	nb = (unsigned int)n;
-	str = ft_strnew(len + 1);
-	if (n < 0)
-	{
-		nb = -n;
-		str[0] = '-';
-	}
-	str[len] = '\0';
-	if (n == 0)
-		str[--len] = '0';
-	while (nb != 0)
-	{
-		str[--len] = (nb % 10) + 48;
-		nb = nb / 10;
-	}
-	return (str);
-}
+	
+	return (str)
+}*/
