@@ -52,6 +52,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnew(size_t size);
 char	*ft_strstr(const char *s1, const char *s2);
 char	*ft_strnstr(const char *s1, const char *s2, size_t n);
+char	*ft_strsub(char const *s, unsigned int start, size_t len);
 void	*ft_memset(void *b, int c, size_t len);
 void	*ft_bzero(void *s, size_t n);
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n);
