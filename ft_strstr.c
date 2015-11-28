@@ -14,8 +14,5 @@
 
 char	*ft_strstr(const char *s1, const char *s2)
 {
-	size_t	lg_s1;
-
-	lg_s1 = ft_strlen(s1);
-	return (ft_strnstr(s1, s2, lg_s1 + 1));
+	return (ft_strnstr(s1, s2, ft_strlen(s1)));
 }

@@ -15,13 +15,11 @@
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
 	size_t			i;
-	unsigned char	*ptr;
 	unsigned char	c2;
 	unsigned char	*dst1;
 	unsigned char	*src1;
 
 	i = 0;
-	ptr = 0;
 	c2 = (unsigned char)c;
 	dst1 = (unsigned char *)dst;
 	src1 = (unsigned char *)src;
@@ -33,10 +31,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 		i++;
 	}
 	if (src1[i] == c2)
-	{
-		ptr = &dst1[i + 1];
-		return (ptr);
-	}
+		return (&dst1[i + 1]);
 	else
 		return (0);
 }

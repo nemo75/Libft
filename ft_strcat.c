@@ -14,15 +14,5 @@
 
 char	*ft_strcat(char *s1, const char *s2)
 {
-	size_t	lg_s1;
-	size_t	i;
-
-	i = 0;
-	lg_s1 = ft_strlen(s1);
-	while (s2[i] != '\0')
-	{
-		s1[lg_s1++] = s2[i++];
-	}
-	s1[lg_s1] = '\0';
-	return (s1);
+	return (ft_strncat(s1, s2, ft_strlen(s2)));
 }

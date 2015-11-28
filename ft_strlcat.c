@@ -21,14 +21,12 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	i = 0;
 	lg_dst = ft_strlen(dst);
 	lg_src = ft_strlen(src);
-	if (size <= lg_dst)
-	{
-		while (src[i] && i < size)
-		{
-			dst[(size - 1) + i] = src[i];
-			i++;
-		}
+	if (size < lg_dst)
 		return (size + lg_src);
+	while (src[i] && i < (size - lg_dst - 1))
+	{
+		dst[lg_dst + i] = src[i];
+		i++;
 	}
-	return (lg_dst);
+	return (lg_dst + lg_src);
 }
