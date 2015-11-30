@@ -15,21 +15,17 @@
 char	*ft_strtrim(char const *s)
 {
 	size_t	i;
-	size_t	k;
 	size_t	lg_str;
 	char	*str;
-	size_t	len;
 
 	i = 0;
-	k = 0;
-	len = ft_strlen(s);
-	str = ft_strnew(len);
+	str = ft_strnew(ft_strlen(s));
 	lg_str = 0;
 	while (s[i] && (s[i] == '\t' || s[i] == '\n' || s[i] == ' '))
 		i++;
 	if (s[i] && s[i] != '\t' && s[i] != '\n' && s[i] != ' ')
 	{
-		str = ft_strsub(s, i, len);
+		str = ft_strsub(s, i, ft_strlen(s));
 		i++;
 	}
 	lg_str = ft_strlen(str) - 1;
