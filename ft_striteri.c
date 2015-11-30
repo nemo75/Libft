@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpaincha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 17:03:58 by mpaincha          #+#    #+#             */
-/*   Updated: 2015/11/25 17:32:51 by mpaincha         ###   ########.fr       */
+/*   Created: 2015/11/30 12:09:25 by mpaincha          #+#    #+#             */
+/*   Updated: 2015/11/30 12:09:31 by mpaincha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncat(char *s1, const char *s2, size_t n)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	size_t	lg_s1;
-	size_t	i;
+	int		i;
 
 	i = 0;
-	lg_s1 = ft_strlen(s1);
-	if (s1 == NULL && s2 == NULL)
-		return (NULL);
-	while (n > i && s1)
+	while (s[i])
 	{
-		s1[lg_s1 + i] = s2[i];
+		(*f)(i, &s[i]);
 		i++;
 	}
-	s1[lg_s1 + i] = '\0';
-	return (s1);
 }

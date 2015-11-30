@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpaincha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 17:03:58 by mpaincha          #+#    #+#             */
-/*   Updated: 2015/11/25 17:32:51 by mpaincha         ###   ########.fr       */
+/*   Created: 2015/11/30 12:10:00 by mpaincha          #+#    #+#             */
+/*   Updated: 2015/11/30 12:10:04 by mpaincha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncat(char *s1, const char *s2, size_t n)
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	size_t	lg_s1;
-	size_t	i;
+	int		i;
+	char	*str;
 
 	i = 0;
-	lg_s1 = ft_strlen(s1);
-	if (s1 == NULL && s2 == NULL)
-		return (NULL);
-	while (n > i && s1)
+	str = ft_strnew(ft_strlen(s));
+	while (s[i])
 	{
-		s1[lg_s1 + i] = s2[i];
+		str[i] = (*f)(s[i]);
 		i++;
 	}
-	s1[lg_s1 + i] = '\0';
-	return (s1);
+	return (str);
 }
