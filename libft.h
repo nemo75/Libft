@@ -34,6 +34,7 @@ int		ft_strnequ(char const *s1, char const *s2, size_t n);
 char	**ft_strsplit(char const *s, char c);
 char	*ft_strjoin(char const *s1, char const *s2);
 void	ft_strclr(char *s);
+char	*ft_strtrim(char const *s);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char const*s, int fd);
