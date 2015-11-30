@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpaincha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/27 10:57:59 by mpaincha          #+#    #+#             */
-/*   Updated: 2015/11/30 19:50:19 by mpaincha         ###   ########.fr       */
+/*   Created: 2015/11/30 19:36:51 by mpaincha          #+#    #+#             */
+/*   Updated: 2015/11/30 20:20:36 by mpaincha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memdel(void **ap)
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	free(*ap);
-	*ap = NULL;
+	t_list	*tmp;
+	t_list	*tmp2;
+
+	tmp = *alst;
+	while (tmp != NULL)
+	{
+		tmp2 = tmp->next;
+		ft_lstdelone(&tmp, del);
+		tmp = tmp2;
+	}
+	*alst = NULL;
 }
