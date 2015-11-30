@@ -17,6 +17,12 @@
 # include <stdlib.h>
 # include <string.h>
 
+typedef	struct		s_list
+{
+	void			*content;
+	size_t			content_size;
+	struct s_list	*next;
+}					t_list;
 void	ft_putchar(char c);
 void	ft_putnbr(int n);
 size_t	ft_strlen(const char *s);
@@ -36,6 +42,7 @@ char	**ft_strsplit(char const *s, char c);
 char	*ft_strjoin(char const *s1, char const *s2);
 void	ft_strclr(char *s);
 char	*ft_strtrim(char const *s);
+int		ft_count_words(char const *s, char c);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char const*s, int fd);
