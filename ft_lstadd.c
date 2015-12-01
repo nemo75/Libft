@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpaincha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/30 12:10:00 by mpaincha          #+#    #+#             */
-/*   Updated: 2015/12/01 19:06:13 by mpaincha         ###   ########.fr       */
+/*   Created: 2015/12/01 15:11:16 by mpaincha          #+#    #+#             */
+/*   Updated: 2015/12/01 18:56:45 by mpaincha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmap(char const *s, char (*f)(char))
+void	ft_lstadd(t_list **alst, t_list *new)
 {
-	int		i;
-	char	*str;
-
-	i = 0;
-	str = ft_strnew(ft_strlen(s));
-	while (s[i])
-	{
-		str[i] = (*f)(s[i]);
-		i++;
-	}
-	return (str);
+	new->next = *alst;
+	*alst = new;
 }
