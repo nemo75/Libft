@@ -6,7 +6,7 @@
 /*   By: mpaincha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 10:22:06 by mpaincha          #+#    #+#             */
-/*   Updated: 2015/11/27 10:22:09 by mpaincha         ###   ########.fr       */
+/*   Updated: 2015/12/02 11:37:21 by mpaincha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 int		ft_strequ(char const *s1, char const *s2)
 {
-	return (strcmp(s1, s2) == 0) ? 1 : 0;
+	if (s1 && s2)
+		return (strcmp(s1, s2) == 0) ? 1 : 0;
+	return (0);
 }

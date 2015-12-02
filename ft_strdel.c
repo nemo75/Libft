@@ -6,7 +6,7 @@
 /*   By: mpaincha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 11:29:35 by mpaincha          #+#    #+#             */
-/*   Updated: 2015/11/27 11:29:38 by mpaincha         ###   ########.fr       */
+/*   Updated: 2015/12/02 11:29:21 by mpaincha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	ft_strdel(char **as)
 {
-	ft_memdel((void **)as);
+	if (as != NULL)
+		ft_memdel((void **)as);
 }

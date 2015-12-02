@@ -6,7 +6,7 @@
 /*   By: mpaincha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 10:08:22 by mpaincha          #+#    #+#             */
-/*   Updated: 2015/11/30 11:57:24 by mpaincha         ###   ########.fr       */
+/*   Updated: 2015/12/02 11:28:13 by mpaincha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strtrim(char const *s)
 	char	*str;
 
 	i = 0;
+	if (s == NULL)
+		return (NULL);
 	str = ft_strnew(ft_strlen(s));
 	lg_str = 0;
 	while (s[i] && (s[i] == '\t' || s[i] == '\n' || s[i] == ' '))

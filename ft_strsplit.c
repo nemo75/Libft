@@ -6,7 +6,7 @@
 /*   By: mpaincha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 16:44:37 by mpaincha          #+#    #+#             */
-/*   Updated: 2015/12/02 11:15:49 by mpaincha         ###   ########.fr       */
+/*   Updated: 2015/12/02 11:26:23 by mpaincha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,6 @@ char	*ft_putword(char const *s, size_t *i, char c)
 
 	word = (char *)malloc(sizeof(char) * ft_strlen_words(s + *i, c) + 1);
 	j = 0;
-	ft_putnbr(*i);
-	ft_putchar('\n');
 	while (s[*i] && s[*i] != c)
 	{
 		word[j] = s[*i];
@@ -73,6 +71,8 @@ char	**ft_strsplit(char const *s, char c)
 	i = 0;
 	k = 0;
 	j = 0;
+	if (s == NULL)
+		return (NULL);
 	str = (char **)malloc(sizeof(char *) * ft_count_words(s, c) + 1);
 	while (s[i])
 	{
@@ -81,7 +81,6 @@ char	**ft_strsplit(char const *s, char c)
 		else
 		{
 			str[j] = ft_putword(s, &i, c);
-			ft_putstr(str[j]);
 			j++;
 		}
 	}
