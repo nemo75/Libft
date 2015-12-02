@@ -6,13 +6,13 @@
 /*   By: mpaincha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 16:44:37 by mpaincha          #+#    #+#             */
-/*   Updated: 2015/11/27 16:45:11 by mpaincha         ###   ########.fr       */
+/*   Updated: 2015/12/02 11:15:49 by mpaincha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*int		ft_count_words(char const *s, char c)
+int		ft_count_words(char const *s, char c)
 {
 	int		i;
 	int		count;
@@ -41,77 +41,50 @@ int		ft_strlen_words(char const *s, char c)
 
 	len = 0;
 	while (s[len] && s[len] != c)
-		len++
-	return (len)
-
+		len++;
+	return (len);
 }
 
-char	*ft_putword(char const *s, char c)
+char	*ft_putword(char const *s, size_t *i, char c)
 {
-	int		i;
 	char	*word;
+	int		j;
 
-	i = 0;
-	word = (char *)malloc(sizeof(char) * ft_strlen_words(s, c) + 1)
-	while (s[i] && s[i] != c)
+	word = (char *)malloc(sizeof(char) * ft_strlen_words(s + *i, c) + 1);
+	j = 0;
+	ft_putnbr(*i);
+	ft_putchar('\n');
+	while (s[*i] && s[*i] != c)
 	{
-		word[i] = s[i];
-		i++;
+		word[j] = s[*i];
+		*i = *i + 1;
+		j++;
 	}
 	return (word);
 }
 
-char	*ft_putindex(char const *s, char c)
-{
-	int		i;
-	char	*word;
-
-	i = 0;
-	word = (char *)malloc(sizeof(char) * ft_strlen_words(s, c) + 1)
-	while (s[i] && s[i] != c)
-	{
-		word[i] = s[i];
-		i++;
-	}
-	return (i);
-}
-
-char	*ft_strtrim_c(char const *s, char	c)
-{
-	size_t	i;
-	size_t	lg_str;
-	char	*str;
-
-	i = 0;
-	str = ft_strnew(ft_strlen(s));
-	lg_str = 0;
-	while (s[i] && s[i] == c)
-		i++;
-	if (s[i] && s[i] != c)
-	{
-		str = ft_strsub(s, i, ft_strlen(s));
-		i++;
-	}
-	lg_str = ft_strlen(str) - 1;
-	while (lg_str > 0 && str[lg_str] == c)
-		str[lg_str--] = '\0';
-	return (str);
-}
-
 char	**ft_strsplit(char const *s, char c)
 {
-	char	**str;
+	char		**str;
 	size_t		i;
 	size_t		k;
+	size_t		j;
 
 	i = 0;
 	k = 0;
+	j = 0;
 	str = (char **)malloc(sizeof(char *) * ft_count_words(s, c) + 1);
 	while (s[i])
 	{
-		str[i] = ft_putword(ft_strtrim_c(ft_strsub(s, i, ft_strlen(s)), c), ft_putindex(ft_strsub(s, i, ft_strlen(s)), c), c);
-		i++;
+		if (s[i] == c)
+			i++;
+		else
+		{
+			str[j] = ft_putword(s, &i, c);
+			ft_putstr(str[j]);
+			j++;
+		}
 	}
-	return (0);
+	str[j] = 0;
+	return (str);
 }
-*/
