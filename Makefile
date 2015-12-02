@@ -6,7 +6,7 @@
 #    By: mpaincha <mpaincha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/25 12:19:31 by fsimmet           #+#    #+#              #
-#    Updated: 2015/12/02 14:08:07 by mpaincha         ###   ########.fr        #
+#    Updated: 2015/12/02 14:21:17 by mpaincha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ ft_atoi.c \
 ft_count_words.c \
 ft_isalnum.c \
 ft_itoa.c \
+ft_intlen.c \
 ft_isascii.c \
 ft_isdigit.c \
 ft_isalpha.c \

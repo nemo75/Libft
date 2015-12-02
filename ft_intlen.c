@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strequ.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpaincha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/27 10:22:06 by mpaincha          #+#    #+#             */
-/*   Updated: 2015/12/02 14:23:25 by mpaincha         ###   ########.fr       */
+/*   Created: 2015/11/27 11:38:51 by mpaincha          #+#    #+#             */
+/*   Updated: 2015/12/02 14:18:48 by mpaincha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strequ(char const *s1, char const *s2)
+int		ft_intlen(int n)
 {
-	if (s1 && s2)
-		return (ft_strcmp(s1, s2) == 0) ? 1 : 0;
-	return (0);
+	int		i;
+
+	i = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
+		i++;
+	while (n != 0)
+	{
+		n = n / 10;
+		i++;
+	}
+	return (i);
 }

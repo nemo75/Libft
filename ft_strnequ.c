@@ -6,7 +6,7 @@
 /*   By: mpaincha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 10:39:04 by mpaincha          #+#    #+#             */
-/*   Updated: 2015/12/02 11:38:14 by mpaincha         ###   ########.fr       */
+/*   Updated: 2015/12/02 14:23:45 by mpaincha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
 	if (s1 && s2)
-		return (strncmp(s1, s2, n) == 0) ? 1 : 0;
+		return (ft_strncmp(s1, s2, n) == 0) ? 1 : 0;
 	return (0);
 }
