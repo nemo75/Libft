@@ -6,7 +6,7 @@
 /*   By: mpaincha <mpaincha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 13:29:31 by mpaincha          #+#    #+#             */
-/*   Updated: 2015/12/02 14:18:27 by mpaincha         ###   ########.fr       */
+/*   Updated: 2015/12/02 16:34:34 by mpaincha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ int					ft_strnequ(char const *s1, char const *s2, size_t n);
 char				*ft_strnew(size_t size);
 char				*ft_strnstr(const char *s1, const char *s2, size_t n);
 char				*ft_strrchr(const char *s, int c);
+char				*ft_strrev(char *str);
 char				**ft_strsplit(char const *s, char c);
 char				*ft_strstr(const char *s1, const char *s2);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);

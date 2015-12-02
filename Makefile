@@ -6,7 +6,7 @@
 #    By: mpaincha <mpaincha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/25 12:19:31 by fsimmet           #+#    #+#              #
-#    Updated: 2015/12/02 14:21:17 by mpaincha         ###   ########.fr        #
+#    Updated: 2015/12/02 16:34:50 by mpaincha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,7 @@ ft_strsplit.c \
 ft_strtrim.c \
 ft_strnequ.c \
 ft_strcmp.c \
+ft_strrev.c \
 ft_striter.c \
 ft_striteri.c \
 ft_strlcat.c \
