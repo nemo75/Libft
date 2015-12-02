@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_count_words.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpaincha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/30 12:10:00 by mpaincha          #+#    #+#             */
-/*   Updated: 2015/12/02 12:42:27 by mpaincha         ###   ########.fr       */
+/*   Created: 2015/12/02 13:38:58 by mpaincha          #+#    #+#             */
+/*   Updated: 2015/12/02 13:39:13 by mpaincha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmap(char const *s, char (*f)(char))
+int		ft_count_words(char const *s, char c)
 {
 	int		i;
-	char	*str;
+	int		count;
+	int		ok;
 
 	i = 0;
-	if (s == NULL && f == NULL)
-		return (NULL);
-	str = ft_strnew(ft_strlen(s));
+	count = 0;
+	ok = 1;
 	while (s[i])
 	{
-		str[i] = (*f)(s[i]);
+		if (s[i] != c && ok)
+		{
+			count++;
+			ok = 0;
+		}
+		else if (s[i] == c)
+			ok = 1;
 		i++;
 	}
-	return (str);
+	return (count);
 }

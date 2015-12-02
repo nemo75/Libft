@@ -6,36 +6,13 @@
 /*   By: mpaincha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 16:44:37 by mpaincha          #+#    #+#             */
-/*   Updated: 2015/12/02 11:26:23 by mpaincha         ###   ########.fr       */
+/*   Updated: 2015/12/02 13:39:51 by mpaincha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_count_words(char const *s, char c)
-{
-	int		i;
-	int		count;
-	int		ok;
-
-	i = 0;
-	count = 0;
-	ok = 1;
-	while (s[i])
-	{
-		if (s[i] != c && ok)
-		{
-			count++;
-			ok = 0;
-		}
-		else if (s[i] == c)
-			ok = 1;
-		i++;
-	}
-	return (count);
-}
-
-int		ft_strlen_words(char const *s, char c)
+static int		ft_strlen_words(char const *s, char c)
 {
 	int		len;
 
@@ -45,7 +22,7 @@ int		ft_strlen_words(char const *s, char c)
 	return (len);
 }
 
-char	*ft_putword(char const *s, size_t *i, char c)
+static char		*ft_putword(char const *s, size_t *i, char c)
 {
 	char	*word;
 	int		j;
@@ -61,7 +38,7 @@ char	*ft_putword(char const *s, size_t *i, char c)
 	return (word);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
 	char		**str;
 	size_t		i;
