@@ -6,13 +6,13 @@
 /*   By: mpaincha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 11:38:51 by mpaincha          #+#    #+#             */
-/*   Updated: 2015/12/02 14:18:48 by mpaincha         ###   ########.fr       */
+/*   Updated: 2015/12/03 10:47:14 by mpaincha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_intlen(int n)
+size_t		ft_intlen(int n)
 {
 	int		i;
 
