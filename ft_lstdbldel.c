@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_intlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstdbldel.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpaincha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/03 17:55:40 by mpaincha          #+#    #+#             */
-/*   Updated: 2015/12/03 17:55:42 by mpaincha         ###   ########.fr       */
+/*   Created: 2015/12/11 10:06:14 by mpaincha          #+#    #+#             */
+/*   Updated: 2015/12/20 16:12:56 by mpaincha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_intlen(int n)
+void	ft_lstdbldel(t_dbllist **list)
 {
-	int		i;
+	t_elem	*tmp;
 
-	i = 0;
-	if (n == 0)
-		return (1);
-	if (n < 0)
-		i++;
-	while (n != 0)
+	tmp = NULL;
+	while ((*list)->head != NULL)
 	{
-		n = n / 10;
-		i++;
+		tmp = (*list)->head->next;
+		free((*list)->head->content);
+		(*list)->head->content = NULL;
+		free((*list)->head);
+		(*list)->head = tmp;
 	}
-	return (i);
+	(*list)->tail = NULL;
+	(*list)->head = NULL;
 }

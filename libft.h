@@ -6,7 +6,7 @@
 /*   By: mpaincha <mpaincha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 13:29:31 by mpaincha          #+#    #+#             */
-/*   Updated: 2015/12/03 10:47:03 by mpaincha         ###   ########.fr       */
+/*   Updated: 2015/12/20 16:15:44 by mpaincha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,18 @@ typedef	struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+typedef struct		s_elem
+{
+	void			*content;
+	struct s_elem	*prev;
+	struct s_elem	*next;
+}					t_elem;
+typedef struct		s_dbllist
+{
+	size_t			length;
+	struct s_elem	*tail;
+	struct s_elem	*head;
+}					t_dbllist;
 int					ft_atoi(const char *str);
 void				*ft_bzero(void *s, size_t n);
 int					ft_count_words(char const *s, char c);

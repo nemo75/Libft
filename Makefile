@@ -6,7 +6,7 @@
 #    By: mpaincha <mpaincha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/25 12:19:31 by fsimmet           #+#    #+#              #
-#    Updated: 2015/12/02 16:34:50 by mpaincha         ###   ########.fr        #
+#    Updated: 2015/12/20 16:12:19 by mpaincha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,7 +73,10 @@ ft_lstdelone.c \
 ft_lstdel.c \
 ft_lstiter.c \
 ft_lstmap.c \
-ft_lstadd.c
+ft_lstadd.c \
+ft_lstdbladd.c \
+ft_lstdbldel.c \
+ft_lstdblnew.c
 SRCO = $(SRC:.c=.o)
 HEADERS = .
 CC = gcc
